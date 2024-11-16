@@ -35,6 +35,12 @@ npx create-next-app@14
 cd .\shoppy-ui\
 ```
 
+- Puis nous directement lancer notre projet nextjs avec
+
+```
+npm run dev
+```
+
 ![border](../assets/line/line-pink-point_r.png)
 
 <a href="#sommaire">
