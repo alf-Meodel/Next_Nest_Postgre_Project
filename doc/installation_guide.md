@@ -12,15 +12,28 @@
 
 ![border](../assets/line/line-teal-point_r.png)
 
-- [Tableau Comparatif](#tableau-comparatif)
+- [Get Started](#get-started)
 
 ![border](../assets/line/border_deco_rb.png)
 
-# Tableau Comparatif
+# Get Started
 
----
+- Pour commencer nous allons créer la base de notre projet en utilisant **NextJS**
 
-## test
+```
+npx create-next-app@14
+```
+
+- dans les étapes de création de nextjs voici celles que nous n'allons pas ajouter à notre projet ,
+
+  - use `src/` directory? » No,
+  - import alias (@/\*)? ... No
+
+- Après l'installation nous allons simplement aller dans le dossier de notre projet
+
+```
+cd .\shoppy-ui\
+```
 
 ![border](../assets/line/line-pink-point_r.png)
 
