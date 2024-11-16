@@ -93,7 +93,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
     </AppRouterCacheProvider>
 ```
 
-- Puis dans **App** nous allons ajouter un nouveau fichier
+- Dans **App** nous allons ajouter un nouveau fichier
 
 ```
 dark.theme.ts
@@ -115,7 +115,7 @@ const darkTheme = createTheme({
 export default darkTheme;
 ```
 
-- Puis nous retournons dans **Layout.tsx** afin d'y ajouter notre dark theme ainsi que quelques autres elements :
+- Ensuite nous retournons dans **Layout.tsx** afin d'y ajouter notre dark theme ainsi que quelques autres elements :
 
 - ne pas oublier l'import **@mui/material** qui ne semble pas vouloir se placer automatiquement
 
