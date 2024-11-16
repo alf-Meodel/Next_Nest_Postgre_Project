@@ -10,7 +10,7 @@
 
 # Navigation
 
-- [Benchmark SGBDR](./doc/benchmark-sgbdr.md)
+- [Benchmark Next Nest](./doc/benchmark_next_nest.md)
 
 ![border](./assets/line/line-pink-point_l.png)
 
