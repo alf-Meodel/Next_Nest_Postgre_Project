@@ -11,6 +11,8 @@ export default function ClientProviders({
     children: React.ReactNode;
 }) {
     return (
+        // Ce Components fonctionnait directement 
+        // dans LayoutRouter.tsx dans une versions antérieure de NextJS
         <AppRouterCacheProvider>
             <ThemeProvider theme={darkTheme}>
                 <CssBaseline />

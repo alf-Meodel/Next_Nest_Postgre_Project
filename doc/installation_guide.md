@@ -134,7 +134,9 @@ import { Container } from "@mui/material";
 </AppRouterCacheProvider>
 ```
 
-- Mais à ce stade des erreurs surviennent à cause de l'écart des versions utilisés dans le tuto
+- Mais à ce stade des erreurs surviennent car "use client" doit être utilisé pour couvrir la librairie **"@emotion/react"**
+
+- Nous allons donc **isoler cette partie du code** afin de la placer dans un component séparé qui sera importé dans **Layout.tsx** et bénficiera de la directive **"use client"**
 
 ![border](../assets/line/line-teal-point_r.png)
 
