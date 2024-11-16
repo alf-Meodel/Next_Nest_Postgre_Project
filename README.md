@@ -14,6 +14,7 @@
 # Navigation
 
 - [Benchmark Next Nest](./doc/benchmark_next_nest.md)
+- [Guide d'installation](./doc/installation_guide.md)
 
 ![border](./assets/line/line-pink-point_l.png)
 
