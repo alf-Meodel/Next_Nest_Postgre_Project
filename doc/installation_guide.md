@@ -15,6 +15,7 @@
 - [Get Started](#get-started)
   - [Installation](#installation)
   - [Material UI](#material-ui)
+  - [Authentification Components](#authentification-components)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -138,7 +139,73 @@ import { Container } from "@mui/material";
 
 - Nous allons donc **isoler cette partie du code** afin de la placer dans un component séparé qui sera importé dans **Layout.tsx** et bénficiera de la directive **"use client"**
 
+- **Creation du dossier components/ClientProviders.tsx** pour isoler la partie du code qui utilise la directive **"use client"**
+
 ![border](../assets/line/line-teal-point_r.png)
+
+## Authentification Components
+
+- Nous allons créer pour l'authentification dans app le dossier **auth** dans lequel se trouveront le dossier **login** ainsi que le dossier **signup** , dans lesquels respectivement se trouveront les fichiers page.tsx avec la structure ( copié collé) de Home :
+
+```
+export default function Login() {
+    return (
+        <>
+        </>
+    );
+}
+```
+
+- nous pouvosn ainsi vérifier que les routes sont disponibles à partir de l'url en écrivant le nom du dossier **auth/login** à la suite
+
+- Ensuite dans le dossier auth nous allons créer un fichier layout.tsx qui contiendra la structure de base de nos pages d'authentification
+
+```
+import { Box } from "@mui/material"
+
+export default function AuthLayout({
+    children
+}: {
+    children: React.ReactNode
+}) {
+    return (
+        <Box className="h-screen flex items-center justify-center">
+            {children}
+        </Box>
+    )
+}
+```
+
+- Puis nous allons créer notre composant de login avec la structure suivante :
+
+```
+import { Button, Link, Stack, TextField } from "@mui/material";
+import NextLink from 'next/link'
+
+export default function Login() {
+    return (
+        <Stack spacing={2} className="w-full max-w-xs">
+            <TextField label="Email" variant="outlined" type="email" />
+            <TextField label="Password" variant="outlined" type="password" />
+            <Button variant="contained">
+                Login
+            </Button>
+            <Link component={NextLink} href="/auth/signup"
+                className="self-center"
+            >
+                Signup
+            </Link>
+        </Stack>
+    );
+}
+```
+
+- PS ne pas oublier d'utiliser l'import Link de material ui
+- Pour eviter le probleme d'incompatibilité avec le paramètre component={NextLink}
+
+```
+import { Button, Link, Stack, TextField } from "@mui/material";
+```
 
 ![border](../assets/line/line-pink-point_r.png)
 
