@@ -16,6 +16,7 @@
   - [Installation](#installation)
   - [Material UI](#material-ui)
   - [Authentification Components](#authentification-components)
+  - [Premiers pas avec Nest JS ](#get-started-avec-nestjs)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -206,6 +207,29 @@ export default function Login() {
 ```
 import { Button, Link, Stack, TextField } from "@mui/material";
 ```
+
+- Et enfin nosu allons ajouter la section signup en copiant ce qui se trouve dans login en inversant les liens de rediurections et en modifiant le nom du bouton d'action
+
+```
+export default function Signup() {
+    return (
+        <Stack spacing={2} className="w-full max-w-xs">
+            <TextField label="Email" variant="outlined" type="email" />
+            <TextField label="Password" variant="outlined" type="password" />
+            <Button variant="contained">
+                Signup
+            </Button>
+            <Link component={NextLink} href="/auth/login" className="self-center">
+                Login
+            </Link>
+        </Stack>
+    );
+}
+```
+
+![border](../assets/line/line-pink-point_r.png)
+
+## Get Started avec Nest.js
 
 ![border](../assets/line/line-pink-point_r.png)
 
