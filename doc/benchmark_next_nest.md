@@ -45,24 +45,32 @@ Pour des applications front-end légères ou des sites web avec des besoins back
 
 #### Exemples :
 ```
-Blogs, sites vitrines, petites applications.
+Blogs, 
+sites vitrines, 
+petites applications.
 ```
 
 ## NestJS seul :
 
 Pour des backends puissants nécessitant des API complexes, des WebSockets, ou une architecture microservices.
-Exemples : Plateformes d’entreprise, API pour mobile, gestion de données en temps réel.
+#### Exemples :
+```
+ Plateformes d’entreprise, 
+ API pour mobile, 
+ gestion de données en temps réel.
+```
 
 ## Next.js + NestJS :
 
 Pour des applications full-stack évolutives combinant une interface performante et un backend structuré.
-Exemples : SaaS, e-commerce, plateformes éducatives, dashboards complexes.
-Avec ce tableau, vous pouvez facilement décider si vous avez besoin de Next.js, NestJS, ou leur combinaison pour répondre aux exigences de votre projet.
 
-
-![border](../assets/line/border_deco_rb.png)
-
-# Introduction
+#### Exemples :
+```
+ SaaS,
+ e-commerce,
+ plateformes éducatives,
+ dashboards complexes.
+```
 
 ![border](../assets/line/line-pink-point_r.png)
 
