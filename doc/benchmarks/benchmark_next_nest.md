@@ -2,15 +2,15 @@
   <img src="/assets/button/home_page.png" alt="Home page" style="width: 150px; height: auto;">
 </a>
 
-![border](/Next_Nest_Postgre_Project/assets/line/border_deco_rt.png)
+![border](/assets/line/border_deco_rt.png)
 
 # BENCHMARK NEXT NEST
 
-![border](/Next_Nest_Postgre_Project/assets/line/line-pink-point_l.png)
+![border](/assets/line/line-pink-point_l.png)
 
 ## Sommaire
 
-![border](/Next_Nest_Postgre_Project/assets/line/line-teal-point_r.png)
+![border](/assets/line/line-teal-point_r.png)
 
 - [Tableau Comparatif](#tableau-comparatif)
 - [Quand utiliser quoi](#quand-utiliser-quoi-)
@@ -18,7 +18,7 @@
   - [NestJS Seul](#nextjs-seul-)
   - [NextJS + NestJS](#nextjs-seul-)
 
-![border](/Next_Nest_Postgre_Project/assets/line/border_deco_rb.png)
+![border](/assets/line/border_deco_rb.png)
 
 # Tableau Comparatif
 
@@ -77,10 +77,10 @@ Pour des applications full-stack évolutives combinant une interface performante
  dashboards complexes.
 ```
 
-![border](/Next_Nest_Postgre_Project/assets/line/line-pink-point_r.png)
+![border](/assets/line/line-pink-point_r.png)
 
 <a href="#sommaire">
-  <img src="/Next_Nest_Postgre_Project/assets/button/back_to_top.png" alt="Back to top" style="width: 150px; height: auto;">
+  <img src="/assets/button/back_to_top.png" alt="Back to top" style="width: 150px; height: auto;">
 </a>
 
-![border](/Next_Nest_Postgre_Project/assets/line/border_deco_l.png)
+![border](/assets/line/border_deco_l.png)
