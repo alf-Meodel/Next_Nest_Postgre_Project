@@ -19,6 +19,8 @@
 - [Backend avec Nest JS ](#backend-avec-nestjs)
   - [Introduction ](#introduction)
   - [Mise à niveau avec pnpm](#mise-à-niveau-avec-pnpm)
+  - [Retour à NestJS](#retour-à-linstallation-nestjs)
+  - [Creation d'un workspace](#creation-dun-workspace-pour-simplifier-le-travail-sur-vscode)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -251,7 +253,49 @@ nest new shoppy-backend
 
 ## Mise à niveau avec pnpm
 
-- Nous allons selectionner **pnpm** pour une installation rapide
+- Dans un premier temps nous allons vérifier que pnpm est disponible
+
+```
+pnpm --version
+```
+
+- Si pnpm n'est pas installé, nous allons l'installer
+
+```
+npm install -g pnpm
+```
+
+- Nous allons vérifier si l'installation à réussi
+
+```
+pnpm --version
+```
+
+- Une fois pnpm installé et reconnu, nous allons exécuter la commande suivante afin d'installer les dépendances :
+
+```
+pnpm install --strict-peer-dependencies=false
+```
+
+## Retour à l'installation NestJS
+
+- à présent que pnpm est installé avec ses dépendances nous exécutons à nouveau la commande pour installer NestJS
+
+```
+nest new shoppy-backend
+```
+
+- ce qui nous amène à une installation sans erreurs youpi ^^
+
+- ensuite nous allons accéder à notre backend fraichement installé
+
+```
+cd .\shoppy-backend\
+```
+
+## Creation d'un workspace pour simplifier le travail sur vscode
+
+- Dans vs code nous allons dans file > add folder to workspace > select le dossier shoppy-backend et on valide
 
 ![border](../assets/line/line-pink-point_r.png)
 
