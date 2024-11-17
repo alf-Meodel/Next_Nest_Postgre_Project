@@ -1,23 +1,23 @@
- <a href="../README.md">
-  <img src="../assets/button/home_page.png" alt="Home page" style="width: 150px; height: auto;">
+ <a href="../../README.md">
+  <img src="../../assets/button/home_page.png" alt="Home page" style="width: 150px; height: auto;">
 </a>
 
-![border](../assets/line/border_deco_rt.png)
+![border](../../assets/line/border_deco_rt.png)
 
 # BENCHMARK NPM PNPM
 
-![border](../assets/line/line-pink-point_l.png)
+![border](../../assets/line/line-pink-point_l.png)
 
 ## Sommaire
 
-![border](../assets/line/line-teal-point_r.png)
+![border](../../assets/line/line-teal-point_r.png)
 
 - [Explications supplémentaires](#explications-supplémentaires)
   - [Vitesse](#vitesse-)
   - [Espace Disque](#espace-disque-)
   - [Facilité d’utilisation](#facilité-dutilisation-)
 
-![border](../assets/line/border_deco_rb.png)
+![border](../../assets/line/border_deco_rb.png)
 
 # Tableau Comparatif
 
@@ -32,7 +32,7 @@
 | **Facilité d’utilisation**         | Prêt à l’emploi (pré-installé avec Node.js)                 | Requiert une installation manuelle                      |
 | **Support multi-projets**          | Inefficace (chaque projet consomme de l’espace disque)      | Très efficace grâce à la centralisation des dépendances |
 
-![border](../assets/line/line-pink-point_r.png)
+![border](../../assets/line/line-pink-point_r.png)
 
 # Explications supplémentaires
 
@@ -54,10 +54,10 @@ Conclusion
 Utilise npm si tu veux la simplicité et éviter des configurations supplémentaires.
 Utilise pnpm pour des projets complexes ou lorsque tu veux optimiser les performances et l'espace disque.
 
-![border](../assets/line/line-pink-point_r.png)
+![border](../../assets/line/line-pink-point_r.png)
 
 <a href="#sommaire">
-  <img src="../assets/button/back_to_top.png" alt="Back to top" style="width: 150px; height: auto;">
+  <img src="../../assets/button/back_to_top.png" alt="Back to top" style="width: 150px; height: auto;">
 </a>
 
-![border](../assets/line/border_deco_l.png)
+![border](../../assets/line/border_deco_l.png)
