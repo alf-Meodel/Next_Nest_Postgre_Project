@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "shoppy-backend"
+		},
+		{
+			"path": "shoppy-ui"
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}

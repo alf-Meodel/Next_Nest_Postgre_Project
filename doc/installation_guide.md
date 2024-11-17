@@ -295,7 +295,40 @@ cd .\shoppy-backend\
 
 ## Creation d'un workspace pour simplifier le travail sur vscode
 
-- Dans vs code nous allons dans file > add folder to workspace > select le dossier shoppy-backend et on valide
+### Où se situer pour faire "Add Folder to Workspace" ?
+
+- Pas besoin de se déplacer dans le terminal :
+
+- Ce processus ne dépend pas de notre position actuelle dans le projet.
+- Ainsi nous pouvons lancer Visual Studio Code depuis n’importe où.
+
+### Étapes détaillées :
+
+- Lancer VS Code :
+
+- Ouvre VS Code.
+- Si tu vois une fenêtre avec un projet déjà ouvert, ce n'est pas grave.
+- Ajouter les dossiers :
+
+- Dans le menu en haut, clique sur File > Add Folder to Workspace.
+- Navigue vers ton dossier code.
+- Sélectionne le dossier shoppy-backend et clique sur Add.
+- Répète la procédure pour le dossier shoppy-ui.
+
+### Enregistrer l’espace de travail :
+
+- Après avoir ajouté les deux dossiers :
+- Va dans File > Save Workspace As....
+- Enregistre ce fichier .code-workspace dans le dossier code :
+
+```
+shoppy.code-workspace
+```
+
+- Ouvrir l’espace de travail enregistré :
+
+- Pour travailler plus tard, double-clique sur le fichier code-workspace que tu viens d’enregistrer.
+  Cela rouvrira automatiquement shoppy-backend et shoppy-ui dans VS Code.
 
 ![border](../assets/line/line-pink-point_r.png)
 
