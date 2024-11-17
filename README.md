@@ -13,7 +13,8 @@
 
 # Navigation
 
-- [Benchmark Next Nest](./doc/benchmark_next_nest.md)
+- [Benchmark Next Nest](./doc/benchmarks/benchmark_next_nest.md)
+- [Benchmark npm pnpm](./doc/benchmarks/benchmark_npm_pnpm.md)
 - [Guide d'installation](./doc/installation_guide.md)
 
 ![border](./assets/line/line-pink-point_l.png)

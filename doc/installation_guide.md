@@ -16,7 +16,9 @@
   - [Installation](#installation)
   - [Material UI](#material-ui)
   - [Authentification Components](#authentification-components)
-  - [Premiers pas avec Nest JS ](#get-started-avec-nestjs)
+- [Backend avec Nest JS ](#backend-avec-nestjs)
+  - [Introduction ](#introduction)
+  - [Mise à niveau avec pnpm](#mise-à-niveau-avec-pnpm)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -229,7 +231,27 @@ export default function Signup() {
 
 ![border](../assets/line/line-pink-point_r.png)
 
-## Get Started avec Nest.js
+# Backend avec Nest.js
+
+## Introduction
+
+- Nous allons installer NestJS en utilisant le CLI dans le scope global
+
+```
+npm i -g @nestjs/cli@latest
+```
+
+- Puis dans notre repo dans le dossier code nous allons init notre backend
+
+```
+nest new shoppy-backend
+```
+
+![border](../assets/line/line-teal-point_r.png)
+
+## Mise à niveau avec pnpm
+
+- Nous allons selectionner **pnpm** pour une installation rapide
 
 ![border](../assets/line/line-pink-point_r.png)
 
