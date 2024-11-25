@@ -19,9 +19,9 @@
 - [Backend avec Nest JS ](#backend-avec-nestjs)
   - [Introduction ](#introduction)
   - [Mise à niveau avec pnpm](#mise-à-niveau-avec-pnpm)
-  - [Retour à NestJS](#retour-à-linstallation-nestjs)
   - [Creation d'un workspace](#creation-dun-workspace-pour-simplifier-le-travail-sur-vscode)
   - [Erreurs de compatibilité windows en cascades](#erreurs-de-compatibilité-windows-en-cascades)
+  - [Retour à NestJS](#retour-à-linstallation-nestjs)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -232,6 +232,8 @@ export default function Signup() {
 }
 ```
 
+<a href="#sommaire"><img src="../assets/button/back_to_top.png" alt="Back to top" style="width: 150px; height: auto;"></a>
+
 ![border](../assets/line/line-pink-point_r.png)
 
 # Backend avec Nest.js
@@ -278,21 +280,13 @@ pnpm --version
 pnpm install --strict-peer-dependencies=false
 ```
 
-## Retour à l'installation NestJS
-
 - à présent que pnpm est installé avec ses dépendances nous exécutons à nouveau la commande pour installer NestJS
 
 ```
 nest new shoppy-backend
 ```
 
-- ce qui nous amène à une installation sans erreurs youpi ^^
-
-- ensuite nous allons accéder à notre backend fraichement installé
-
-```
-cd .\shoppy-backend\
-```
+<a href="#sommaire"><img src="../assets/button/back_to_top.png" alt="Back to top" style="width: 150px; height: auto;"></a>
 
 ## Creation d'un workspace pour simplifier le travail sur vscode
 
@@ -350,13 +344,64 @@ ESLint avec Prettier :
 
 La règle prettier/prettier d’ESLint impose un style spécifique pour les fichiers, y compris le type de fin de ligne.
 
-<a href="../doc/readmore/rm_errors.md"><img src="../assets/button/read_more.png" alt="Read more" style="width: 150px; height: auto;">
-</a>
+<a href="../doc/readmore/rm_errors.md"><img src="../assets/button/read_more.png" alt="Read more" style="width: 150px; height: auto;"></a>
 
 ![border](../assets/line/line-pink-point_r.png)
 
-<a href="#sommaire">
-  <img src="../assets/button/back_to_top.png" alt="Back to top" style="width: 150px; height: auto;">
-</a>
+## Retour à l'installation NestJS
+
+- ce qui nous amène à une installation sans erreurs youpi ^^
+
+- ensuite nous allons accéder à notre backend fraichement installé
+
+```
+cd .\shoppy-backend\
+```
+
+- Pour ouvrir le fichier main.js et **modifier le port 3001**
+
+```
+ await app.listen(process.env.PORT ?? 3001);
+```
+
+- Et e,nfin nous allons Lancer NESTjs
+
+```
+pnpm run start:dev
+```
+
+- Puis nous allons ouvrir **Postman**
+- pour ouvrir une requete GET et y ajouter :
+
+```
+http://localhost:3001/
+```
+
+- Ce qui naturellement nous renvoie le `hello world` par defaut
+
+## Preparer/Nettoyer NestJS
+
+- Pour nettoyer NestJS, nous allons commencer par supprimer les fichiers **app.service.ts** et **app.controller.ts** puis **app.controller.sp...**
+
+<a href="../doc/annexe/Nest_clean.md"><img src="../assets/button/read_more.png" alt="Read more" style="width: 150px; height: auto;"></a>
+
+- Puis nous allons nettoyer le module `app.module.ts`
+- ATTENTION : Lors de la sauvegarde le formatage crée une erreur car entre {} il n'existe pas d'espace ; cependant le formatage automatique rajoute un espace
+
+- Pour contre cet effet indésirable nosu allons faire `ctrl + shift + p` et selectionner `File: Save without formating` afi nde contourner ce problème
+
+```
+import { Module } from '@nestjs/common';
+@Module({
+  imports: [],
+  controllers: [],
+  providers: [],
+})
+export class AppModule {}
+```
+
+![border](../assets/line/line-pink-point_r.png)
+
+<a href="#sommaire"><img src="../assets/button/back_to_top.png" alt="Back to top" style="width: 150px; height: auto;"></a>
 
 ![border](../assets/line/border_deco_l.png)
