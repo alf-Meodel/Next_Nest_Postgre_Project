@@ -6,6 +6,10 @@
 
 # INSTALLATION GUIDE
 
+```
+File: Save without formating
+```
+
 ![border](../assets/line/line-pink-point_l.png)
 
 ## Sommaire
@@ -22,6 +26,12 @@
   - [Creation d'un workspace](#creation-dun-workspace-pour-simplifier-le-travail-sur-vscode)
   - [Erreurs de compatibilité windows en cascades](#erreurs-de-compatibilité-windows-en-cascades)
   - [Retour à NestJS](#retour-à-linstallation-nestjs)
+  - [Preparer/Nettoyer NestJS](#preparernettoyer-nestjs)
+  - [User Module](#user-module)
+  - [User Controller](#user-controller)
+  - [User Services](#user-services)
+  - [DTO First steps](#dto-first-steps)
+  - [CLASS VALIDATOR & CLASS TRANSFORMER](#class-validator--transformer)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -398,6 +408,136 @@ import { Module } from '@nestjs/common';
   providers: [],
 })
 export class AppModule {}
+```
+
+## USER MODULE
+
+- Puis toujours dans le dossier backend nous allons rajouter :
+
+```
+nest g module users
+```
+
+- message en terminal :
+
+```
+CREATE src/users/users.module.ts (86 bytes)
+UPDATE src/app.module.ts (203 bytes)
+```
+
+- Ce qui va générer un dossier dans lequel se trouve
+
+```
+users.module.ts
+```
+
+- Contenant les lignes suivantes :
+
+```
+import { Module } from '@nestjs/common';
+@Module({})
+export class UsersModule {}
+```
+
+- Aussi nous remarquons que cete ajout à inséré de nouvelles lignes dans le fichier `app.module.ts` :
+- Qui possède desormais un nouvel import :
+
+```
+@Module({
+  imports: [UsersModule],
+```
+
+## USER CONTROLLER
+
+- Ensuite nosu allons ajouter dans le terminal les lignes suivantes
+
+```
+nest g controller users
+```
+
+- Ce qui va générer 2 fichiers `users.controller.spec.ts` et `users.controller.ts` dans le dossier `users`
+
+## USER SERVICES
+
+- Puis nous allons ajouter
+
+```
+nest g service users
+```
+
+- Ce qui va nous permettre d'ajouter deux fichiers `users.service.spec.ts` et `users.service.ts` dans le dossier `users`
+
+## DTO First steps
+
+- Puis nous allons ajouter DANS users.controller.ts le script suivant
+
+```
+import { Body, Controller, Post } from '@nestjs/common';
+
+@Controller('users')
+export class UsersController {
+
+    @Post()
+    createUser(@Body() request: ) {}
+}
+```
+
+- et créer un dossier `dto` dans lequel nous allons ajouter un fichier `create-user.dto.ts`
+
+```
+create-user.request.ts
+```
+
+- Avec le contenu suivant
+
+```
+export class CreateUserRequest {
+  email: string;
+  password: string;
+}
+```
+
+- Puis nous allons compléter `users.controller.ts` en ajoutant
+- mais cela est encore sous erreur nosu allons donc **cliquer** sur **UserServices**
+
+```
+import { Body, Controller, Post } from '@nestjs/common';
+import { CreateUserRequest } from './dto/create-user.request';
+import { UsersService } from './users.service';
+
+@Controller('users')
+export class UsersController {
+    constructor(private readonly usersService: UsersService)
+  @Post()
+  createUser(@Body() request: CreateUserRequest) {}
+}
+```
+
+- Et enfin dans users.controller.ts voici le resultat final :
+
+```
+import { Body, Controller, Post } from '@nestjs/common';
+import { CreateUserRequest } from './dto/create-user.request';
+import { UsersService } from './users.service';
+
+@Controller('users')
+export class UsersController {
+  constructor(private readonly usersService: UsersService) {}
+  @Post()
+  createUser(@Body() request: CreateUserRequest) {
+    return this.usersService.createUser(request);
+  }
+}
+```
+
+- Ensuite nous allons créer
+
+## CLASS VALIDATOR & TRANSFORMER
+
+- Pour commencer nous allons ajouter de nouveaux imports
+
+```
+pnpm i --save class-validator class-transformer
 ```
 
 ![border](../assets/line/line-pink-point_r.png)
