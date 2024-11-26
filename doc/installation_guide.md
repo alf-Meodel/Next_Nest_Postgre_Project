@@ -32,6 +32,9 @@ File: Save without formating
   - [User Services](#user-services)
   - [DTO First steps](#dto-first-steps)
   - [CLASS VALIDATOR & CLASS TRANSFORMER](#class-validator--transformer)
+  - [Add Pipes](#pipes)
+  - [pnpm i nestjs/config](#nestjsconfig)
+  - [.ENV](#env)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -389,6 +392,8 @@ http://localhost:3001/
 
 - Ce qui naturellement nous renvoie le `hello world` par defaut
 
+![border](../assets/line/line-pink-point_r.png)
+
 ## Preparer/Nettoyer NestJS
 
 - Pour nettoyer NestJS, nous allons commencer par supprimer les fichiers **app.service.ts** et **app.controller.ts** puis **app.controller.sp...**
@@ -410,9 +415,14 @@ import { Module } from '@nestjs/common';
 export class AppModule {}
 ```
 
+<a href="#sommaire"><img src="../assets/button/back_to_top.png" alt="Back to top" style="width: 150px; height: auto;"></a>
+
+![border](../assets/line/line-pink-point_r.png)
+
 ## USER MODULE
 
 - Puis toujours dans le dossier backend nous allons rajouter :
+- Les modules dans NestJS permettent de regrouper logiquement des fonctionnalités liées entre elles (ici, tout ce qui concerne les utilisateurs).
 
 ```
 nest g module users
@@ -447,9 +457,20 @@ export class UsersModule {}
   imports: [UsersModule],
 ```
 
+<a href="#sommaire"><img src="../assets/button/back_to_top.png" alt="Back to top" style="width: 150px; height: auto;"></a>
+
+![border](../assets/line/line-pink-point_r.png)
+
 ## USER CONTROLLER
 
-- Ensuite nosu allons ajouter dans le terminal les lignes suivantes
+- Cette commande génère un contrôleur pour gérer les routes relatives aux utilisateurs.
+
+- Deux fichiers sont créés dans le dossier users :
+
+  - users.controller.ts : contient les endpoints pour interagir avec le module utilisateur.
+  - users.controller.spec.ts : fichier pour écrire des tests unitaires du contrôleur (optionnel à ce stade).
+
+- Voici la commande pour créer notre controller
 
 ```
 nest g controller users
@@ -457,9 +478,20 @@ nest g controller users
 
 - Ce qui va générer 2 fichiers `users.controller.spec.ts` et `users.controller.ts` dans le dossier `users`
 
+### Objectif :
+
+- Le contrôleur est responsable de gérer les requêtes HTTP entrantes et d'appeler les services pour effectuer des actions spécifiques (ex. : création, mise à jour d'utilisateur).
+
+<a href="#sommaire"><img src="../assets/button/back_to_top.png" alt="Back to top" style="width: 150px; height: auto;"></a>
+
+![border](../assets/line/line-pink-point_r.png)
+
 ## USER SERVICES
 
-- Puis nous allons ajouter
+- Cette commande génère un service dédié à la logique métier pour le module utilisateur.
+- Deux fichiers sont créés dans le dossier users :
+  - **users.service.ts** : contient la logique métier (par exemple, la gestion des utilisateurs).
+  - **users.service.spec.ts** : fichier pour les tests unitaires du service (optionnel à ce stade).
 
 ```
 nest g service users
@@ -467,9 +499,20 @@ nest g service users
 
 - Ce qui va nous permettre d'ajouter deux fichiers `users.service.spec.ts` et `users.service.ts` dans le dossier `users`
 
+### Objectif :
+
+Les services encapsulent la logique métier (ex. : interactions avec la base de données, vérifications, transformations de données) pour rendre le contrôleur plus léger.
+
+<a href="#sommaire"><img src="../assets/button/back_to_top.png" alt="Back to top" style="width: 150px; height: auto;"></a>
+
+![border](../assets/line/line-pink-point_r.png)
+
 ## DTO First steps
 
-- Puis nous allons ajouter DANS users.controller.ts le script suivant
+- Un DTO sert à définir clairement les données attendues dans une requête (par exemple, les champs obligatoires pour créer un utilisateur).
+- Cela permet d'avoir un modèle standardisé et de valider les données entrantes.
+
+- Nous allons donc ajouter DANS users.controller.ts le script suivant
 
 ```
 import { Body, Controller, Post } from '@nestjs/common';
@@ -530,7 +573,14 @@ export class UsersController {
 }
 ```
 
-- Ensuite nous allons créer
+### Ce qui se passe :
+
+L'annotation @Body() extrait les données du corps de la requête HTTP.
+Le DTO CreateUserRequest est utilisé pour typer et structurer ces données.
+
+<a href="#sommaire"><img src="../assets/button/back_to_top.png" alt="Back to top" style="width: 150px; height: auto;"></a>
+
+![border](../assets/line/line-pink-point_r.png)
 
 ## CLASS VALIDATOR & TRANSFORMER
 
@@ -538,6 +588,83 @@ export class UsersController {
 
 ```
 pnpm i --save class-validator class-transformer
+```
+
+![border](../assets/line/line-pink-point_r.png)
+
+## Pipes
+
+- Nous allons rajouter dans `main.ts` la ligne suivante en placant en parametres whitelist: true:
+
+` app.useGlobalPipes(new ValidationPipe({ whitelist: true }));`
+
+```
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
+import { ValidationPipe } from '@nestjs/common';
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+  app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
+  await app.listen(process.env.PORT ?? 3001);
+}
+bootstrap();
+
+```
+
+<a href="#sommaire"><img src="../assets/button/back_to_top.png" alt="Back to top" style="width: 150px; height: auto;"></a>
+
+![border](../assets/line/line-pink-point_r.png)
+
+## @nestjs/config
+
+- Puis nous allons installer **nestjs/config**
+
+```
+pnpm i --save @nestjs/config
+```
+
+- et nous allons aller dans **app.module.ts** pour ajouter dans les imports **ConfigModule.forRoot()**
+
+```
+import { Module } from '@nestjs/common';
+import { UsersModule } from './users/users.module';
+import { ConfigModule } from '@nestjs/config';
+
+@Module({
+  imports: [ConfigModule.forRoot(), UsersModule],
+  controllers: [],
+  providers: [],
+})
+export class AppModule {}
+```
+
+<a href="#sommaire"><img src="../assets/button/back_to_top.png" alt="Back to top" style="width: 150px; height: auto;"></a>
+
+![border](../assets/line/line-pink-point_r.png)
+
+## .ENV
+
+- Puis nous allons créer un fichier **.env** dans le dossier racine de notre projet avec les informations de connexion ; ici PORT = 3001
+
+```
+PORT= 3001
+```
+
+- Puis nous allons modifier **main.ts** ou nous allons remplacer la ligne du port 3001 par `await app.listen(app.get(ConfigService).getOrThrow('PORT'));`
+
+```
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
+import { ValidationPipe } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+  app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
+  await app.listen(app.get(ConfigService).getOrThrow('PORT'));
+}
+bootstrap();
 ```
 
 ![border](../assets/line/line-pink-point_r.png)

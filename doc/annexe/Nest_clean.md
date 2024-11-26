@@ -15,6 +15,7 @@
 
 - [Clean Nest](#clean-nest)
 - [DTO Nest](#dto-nest)
+- [ENV](#env)
 
 ![border](../../assets/line/line-teal-point_r.png)
 
@@ -28,7 +29,11 @@
 
 # DTO nest
 
-![alt text](image.png)
+![alt text](../../assets/img/Nest_dto.png)
+
+# .ENV
+
+![alt text](../../assets/img/env.png)
 
 ![border](../../assets/line/line-pink-point_r.png)
 
