@@ -667,6 +667,47 @@ async function bootstrap() {
 bootstrap();
 ```
 
+- Puis dans **create-user.request.ts**
+- Nous allons apporter les modifications suivantes en ajoutant @IsEmail() et @IsStrongPassword :
+
+```
+import { IsEmail, IsStrongPassword } from 'class-validator';
+export class CreateUserRequest {
+  @IsEmail()
+  email: string;
+  @IsStrongPassword()
+  password: string;
+}
+```
+
+- puis nous allons retourner enfin dans le fichier qui posait problème par ses rougeurs jusqu'ici **users.service.ts**
+- Dans lequel nous allons ajouter un simple **console log**
+
+```
+import { Injectable } from '@nestjs/common';
+import { CreateUserRequest } from './dto/create-user.request';
+
+@Injectable()
+export class UsersService {
+  createUser(data: CreateUserRequest) {
+    console.log(data);
+  }
+}
+```
+
+- en regardant les logs ( terminal) on retrouve ConfigModule et les informatiosn que nous avons ajouté
+
+```
+[Nest] 11108  - 26/11/2024 23:19:23     LOG [InstanceLoader] ConfigModule dependencies initialized +1ms
+[Nest] 11108  - 26/11/2024 23:19:23     LOG [RoutesResolver] UsersController {/users}: +40ms
+[Nest] 11108  - 26/11/2024 23:19:23     LOG [RouterExplorer] Mapped {/users, POST} route +3ms
+[Nest] 11108  - 26/11/2024 23:19:23     LOG [NestApplication] Nest application successfully started +2ms
+```
+
+- Puis nous allons dans **Postman** et bonne nuit on reprend demain ^^ 6.35
+
+![border](../assets/line/line-pink-point_r.png)
+
 ![border](../assets/line/line-pink-point_r.png)
 
 <a href="#sommaire"><img src="../assets/button/back_to_top.png" alt="Back to top" style="width: 150px; height: auto;"></a>
